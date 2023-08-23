@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     Enter eag : <br>
+     <input type="text" id="age"><br><br>
+     Enter hight : <br>
+     <input type="text" id="hight" placeholder="Meter"><br><br>
+     Enter Weight : <br> 
+     <input type="text " id="weight" placeholder="kg"><br><br>
+   
+     <button onclick="bmi()" >Calculate</button>
+     <script>
+        const eagBox = parseInt( document.getElementById('age'));
+        const hightBox= parseInt( document.getElementById('hight'));
+        const weightBox=parseInt( document.getElementById('weight'));
+        const IBM = (weightBox / (hightBox * hightBox));
+        function bmi(){
+        console.log(IBM);
+        }
+     </script>
+     
+</body>
+</html>
