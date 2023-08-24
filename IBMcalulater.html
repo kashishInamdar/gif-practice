@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .calculater {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            color: blueviolet;
+            background-color: azure;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            color: blueviolet;
+            background-color: tomato;
+            border: 2px solid black;
+            font-size: 20px;
+            border-radius: 20px;
+            margin-left: 60%;
+            margin-top: 2px;
+        }
+
+        .answer {
+            border: 2px solid black;
+            color: red;
+        }
+    </style>
 </head>
 <body>
-     Enter eag : <br>
-     <input type="text" id="age"><br><br>
-     Enter hight : <br>
-     <input type="text" id="hight" placeholder="Meter"><br><br>
-     Enter Weight : <br> 
-     <input type="text " id="weight" placeholder="kg"><br><br>
-   
-     <button onclick="bmi()" >Calculate</button>
-     <script>
-        const eagBox = parseInt( document.getElementById('age'));
-        const hightBox= parseInt( document.getElementById('hight'));
-        const weightBox=parseInt( document.getElementById('weight'));
-        const IBM = (weightBox / (hightBox * hightBox));
-        function bmi(){
-        console.log(IBM);
+    <div class="calculater">
+        Enter eag &nbsp; &nbsp; &nbsp;: &nbsp;
+        <input type="text" id="eag" placeholder="eag"><br><br>
+        Enter hight &nbsp; &nbsp;: &nbsp;
+        <input type="text" id="hight" placeholder="Meter"><br><br>
+        Enter Weight : &nbsp;
+        <input type="text " id="weight" placeholder="kg"><br><br>
+        <div class="answer">
+            <p id="ans">Your BMI : </p>
+        </div>
+
+        <button type="button" class="btn" onclick="bmi()">Calculate</button>
+    </div>
+    <script>
+        function bmi() {
+            const hightBox = document.getElementById('hight');
+            const weightBox = document.getElementById('weight');
+
+            const userhight = parseInt(hightBox.value);
+            const userweight = parseInt(weightBox.value);
+
+            const BMI = (userweight / (userhight * userhight));
+
+            const ansText = document.getElementById('ans');
+            ansText.innerText = `Your BMI : ${BMI}`;
         }
-     </script>
-     
+    </script>
 </body>
 </html>
